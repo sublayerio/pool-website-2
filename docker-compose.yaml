@@ -8,12 +8,6 @@ services:
       - 80:80
     restart: always
 
-  scripts:
-    build: ./services/scripts
-    volumes:
-      - ./services/scripts/src:/srv
-      - ./environment:/environment
-
   pool-website:
     image: node:14
     env_file:

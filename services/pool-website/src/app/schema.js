@@ -134,6 +134,7 @@ export default {
                 items: [
                     { name: "Release a storybook containing the first React components to quickly create a stake pool marketing page (SPO Marketing Page)" },
                     { name: "Release a tutorial on how to [mint NFT's](https://developers.cardano.org/en/development-environments/native-tokens/native-tokens/) together with [PIADA](https://ada-pi.io)", completed: false },
+                    { name: "Explain terminology by adding tooltips to the website", completed: false, date: "Apr 10" },
                     { name: "Setup the initial pool website (pool.sublayer.io)", completed: true, date: "Apr 10" },
                     { name: "Ordered an Intel NUC to be prepared for (possible) increased hardware requirements caused by Alonzo", completed: true, date: "Apr 10" },
                     { name: "Created a [pull request](https://github.com/SinglePoolAlliance/Registration/pull/194) to get listed on [singlepoolalliance.net](https://singlepoolalliance.net)", completed: true, date: "Apr 10" },
