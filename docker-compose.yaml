@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+
+  proxy:
+    build: ./services/proxy
+    ports:
+      - 80:80
+    restart: always
+
+  scripts:
+    build: ./services/scripts
+    volumes:
+      - ./services/scripts/src:/srv
+      - ./environment:/environment
+
+  pool-website:
+    image: node:14
+    env_file:
+      - ./environment/pool-website.development.env
+    environment:
+      - PORT=3000
+    working_dir: /app
+    volumes:
+      - ./services/pool-website:/app
+    ports:
+      - 5001:3000
+    command: ./entrypoint.sh

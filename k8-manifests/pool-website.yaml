@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pool-website
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: 3000
+  selector:
+    app: pool-website
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pool-website
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pool-website
+  template:
+    metadata:
+      labels:
+        app: pool-website
+    spec:
+      containers:
+        - name: pool-website
+          image: sublayer/pool-website:$VERSION
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+          envFrom:
+            - configMapRef:
+                name: pool-website-config

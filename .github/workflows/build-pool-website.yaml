@@ -1,0 +1,32 @@
+name: Build Pool Website
+
+on:
+  release:
+    types:
+      - created
+
+jobs:
+  build-pool-website:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Set tag as environment variable
+        id: vars
+        run: echo ::set-output name=tag::$(echo ${GITHUB_REF:10})
+      - name: Build the Docker image
+        working-directory: ./services/pool-website
+        run: docker build . --file Dockerfile-prod --tag sublayer/pool-website:${{ steps.vars.outputs.tag }}
+      - name: Login into Gitlab Docker Registry
+        run: docker login -u sublayer -p ${{ secrets.DOCKER_PASSWORD }}
+      - name: Push image to Gitlab Docker Registry
+        run: docker push sublayer/pool-website:${{ steps.vars.outputs.tag }}
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_TOKEN }}
+      - name: Save DigitalOcean kubeconfig
+        run: doctl kubernetes cluster kubeconfig save ${{ secrets.DIGITALOCEAN_CLUSTER_NAME }}
+      - name: Deploy to Kubernetes cluster
+        working-directory: ./scripts
+        run: VERSION=${{ steps.vars.outputs.tag }} ./k8-apply.sh pool-website.yaml
