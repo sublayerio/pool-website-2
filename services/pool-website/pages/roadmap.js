@@ -1,7 +1,13 @@
+import Head from "next/head";
 import RoadmapPage from "../src/app/RoadmapPage";
 
 export default function Roadmap(props) {
     return (
-        <RoadmapPage />
+        <>
+            <Head>
+                <title>Roadmap | Sublayer Pool</title>
+            </Head>
+            <RoadmapPage />
+        </>
     );
 }
