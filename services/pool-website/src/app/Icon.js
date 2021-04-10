@@ -1,3 +1,56 @@
+import { css, keyframes } from "@emotion/react"
+import cx from "classnames"
+
+const pulsate = keyframes`
+0% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    opacity: 0;
+}
+50% {
+    opacity: 1;
+}
+100% {
+    transform: scale(2);
+    -webkit-transform: scale(2);
+    opacity: 0;
+}
+`;
+
+function Pulse(props) {
+
+    return (
+        <div className="relative" style={{ height: 11, width: 11 }}>
+            <span
+                css={css`
+                height: 11px;
+                width: 11px;
+                border-radius: 50%;
+                background: #3bd671;
+                display: inline-block;
+                position: absolute;
+                top: 0;
+                right: 0;
+                &:before {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                content: "";
+                border-radius: 100%;
+                border: 2px #3bd671 solid;
+                box-sizing: border-box;
+                animation: ${pulsate} 1.5s ease-out;
+                animation-iteration-count: infinite;
+                animation-delay: 1.1s;
+                }
+            `}
+            />
+        </div>
+    )
+}
+
 function Indie(props) {
 
     return (
@@ -105,6 +158,7 @@ function GitHub(props) {
 }
 
 const icons = {
+    Pulse,
     Twitter,
     GitHub,
     Processor,

@@ -14,6 +14,7 @@ export default {
         },
         {
             name: "Status",
+            icon: "Pulse",
             target: "_blank",
             url: "https://stats.uptimerobot.com/rYEwMsAZ7v"
         }

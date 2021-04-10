@@ -2,6 +2,7 @@ import { useState } from "react"
 import schema from "./schema"
 import Link from "next/link"
 import cx from "classnames"
+import Icon from "./Icon"
 
 export default function Navigation() {
 
@@ -66,9 +67,9 @@ export default function Navigation() {
                                     <Link href={navItem.url}>
                                         <a
                                             target={navItem.target}
-                                            className="font-medium text-white hover:text-gray-300"
+                                            className="font-medium text-white hover:text-gray-300 flex items-center"
                                         >
-                                            {navItem.name}
+                                            <span className={navItem.icon ? "mr-2" : null}>{navItem.name}</span>{navItem.icon ? <Icon type={navItem.icon} /> : null}
                                         </a></Link>
                                 )
                             })}
@@ -126,9 +127,9 @@ export default function Navigation() {
                                     <Link href={navItem.url}>
                                         <a
                                             target={navItem.target}
-                                            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                                            className="block px-3 py-2 rounded-md text-base flex items-center font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
                                         >
-                                            {navItem.name}
+                                            <span className={navItem.icon ? "mr-2" : null}>{navItem.name}</span>{navItem.icon ? <Icon type={navItem.icon} /> : null}
                                         </a>
                                     </Link>
                                 )

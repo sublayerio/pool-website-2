@@ -91,7 +91,7 @@ function SpecsSection() {
                         My name is Olivier
                     </p>
                     <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-                        I'm the operator of SBLYR Pool. I'm currently located in the Netherlands and I mainly write web applications for clients. I've been following the crypto space since 2017 and I've been involved in the Cardano community since early 2021.
+                        I'm the operator of Sublayer Pool. I'm currently located in the Netherlands and I mainly write web applications for clients. I've been following the crypto space since 2017 and I've been involved in the Cardano community since early 2021.
                     </p>
                 </div>
                 <div className="mt-10 flex justify-center">
