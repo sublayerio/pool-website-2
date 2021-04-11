@@ -79,7 +79,7 @@ export default function RoadmapPage() {
             <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 lg:py-24">
                 <h1 className="text-3xl leading-8 font-extrabold text-center">Roadmap</h1>
                 <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto text-center">
-                    Here you can follow my journey being involved with the Cardano community as well as my plans for the future.
+                    {schema.roadmap.description}
                 </p>
                 <div className="mt-10 space-y-10">
                     {schema.roadmap.sprints.map((sprint, index) => {

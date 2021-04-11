@@ -11,7 +11,7 @@ function SpecsSection() {
                     3 Reasons
     </p>
                 <p className="mt-5 max-w-prose mx-auto text-xl text-gray-500">
-                    My goal is to help decentralise the Cardano network by being an independent stake pool operator running a single stake pool and help others to do the same.
+                    My goal is to help decentralize the Cardano network by being an independent stake pool operator running a single stake pool and help others to do the same.
     </p>
                 <div className="mt-12">
                     <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">

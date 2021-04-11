@@ -1,4 +1,7 @@
 export default {
+    site: {
+        title: "Sublayer Pool"
+    },
     navItems: [
         {
             name: "Delegate",
@@ -68,14 +71,14 @@ export default {
             },
             {
                 title: "How does that benefit me?",
-                content: `By staking your delegating your ADA to a Stake Pool you directly participate in the network and
+                content: `By staking you're delegating your ADA to a Stake Pool you directly participate in the network and
                     help increasing the robustness and decentralization of Cardano. For this you can receive a monetary reward in ADA.`
             },
             {
                 title: "How do I delegate ADA to a stake pool?",
-                content: `To delegate your ADA you simply open up a wallet (e.g. [Daedalus](https://daedaluswallet.io), [Yoroi](https://yoroi-wallet.com) or [Adalite](https://adalite.io)) and select a Stake Pool
-                    (preferably **SBLYR**) in the Staking menu directly in the wallet.
-                Each wallet looks a bit different but overall it's very straight forward. [Read a more detailed guide](/delegate)`
+                content: `To delegate ADA, you first buy ADA on an exchange, open up a wallet application (e.g. [Daedalus](https://daedaluswallet.io), [Yoroi](https://yoroi-wallet.com) or [Adalite](https://adalite.io)) create a wallet, send your ADA to that wallets' address and select a Stake Pool
+                    (preferably **SBLYR**) in the Staking menu directly in the wallet application.
+                Each wallet application looks a bit different but overall it's very straight forward. [Read a more detailed guide](/delegate)`
             },
             // {
             //   title: "What is a pledge",
@@ -88,6 +91,12 @@ export default {
             //   content: `ITN stands for Incenticized Test Net. It was 6 months of test net for Shelley, that was designed to test the game theory and incentive scheme. It started in December 2019. Many pools operators gained valuable experience in running a pool there, and established a reputation. The rewards from the test net were transferred to the main net, which made the test net incentivized – you earned real money from staking on the test net.`,
             // },
         ]
+    },
+    delegate: {
+        title: "Delegate",
+        description: `To delegate ADA, you first buy ADA on an exchange, open up a wallet application (e.g. Daedalus, Yoroi or Adalite) create a wallet, send your ADA to that wallets' address and select a Stake Pool
+        (preferably SBLYR) in the Staking menu directly in the wallet application.
+    Each wallet application looks a bit different but overall it's very straight forward.`
     },
     usps: {
         items: [
@@ -109,6 +118,8 @@ export default {
         ]
     },
     roadmap: {
+        title: "Roadmap",
+        description: "Here you can follow my journey being involved with the Cardano community as well as my plans for the future.",
         sprints: [
             {
                 name: "July 2021",
@@ -159,6 +170,7 @@ export default {
         ]
     },
     community: {
+        description: "I would like to give special thanks to the following Stake Pool Operators for their support.",
         pools: [
             {
                 name: "NASEC",

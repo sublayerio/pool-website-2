@@ -5,7 +5,7 @@ export default function Home(props) {
   return (
     <>
       <Head>
-        <title>Sublayer Pool</title>
+        <title>{schema.site.title}</title>
       </Head>
       <HomePage />
     </>

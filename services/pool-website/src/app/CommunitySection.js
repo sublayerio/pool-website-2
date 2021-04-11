@@ -9,7 +9,7 @@ export default function CommunitySection() {
                     <div className="space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl">
                         <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">Community</h2>
                         <p className="text-xl text-gray-500">
-                            I would like to give special thanks to the following Stake Pool Operators for their support.
+                            {schema.community.description}
                         </p>
                     </div>
                     <ul className="mx-auto grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-4 md:gap-x-6 lg:max-w-5xl lg:gap-x-8 lg:gap-y-12 xl:grid-cols-6">
