@@ -122,31 +122,39 @@ export default {
         description: "Here you can follow my journey being involved with the Cardano community as well as my plans for the future.",
         sprints: [
             {
+                name: "August 2021",
+                items: [
+                    { name: "Increase the pool pledge from 9k to 10k ADA", completed: false },
+                ]
+            },
+            {
                 name: "July 2021",
                 items: [
-                    { name: "Increase the pool pledge from 7k to 8k ADA", completed: false },
+                    { name: "Increase the pool pledge from 8k to 9k ADA", completed: false },
                 ]
             },
             {
                 name: "June 2021",
                 items: [
                     { name: "Add support for more content blocks to SPO Marketing Page", completed: false },
-                    { name: "Increase the pool pledge from 6k to 7k ADA", completed: false },
+                    { name: "Increase the pool pledge from 7k to 8k ADA", completed: false },
                 ]
             },
             {
                 name: "May 2021",
                 items: [
                     { name: "Release MVP version of marketing pages for SPO's (SPO Marketing Page)", completed: false },
-                    { name: "Increase the pool pledge from 5k to 6k ADA", completed: false },
+                    { name: "Increase the pool pledge from 6k to 7k ADA", completed: false },
+                    { name: "Release a storybook containing the first React components to quickly create a stake pool marketing page (SPO Marketing Page)" },
+                    { name: "Explain terminology by adding tooltips to the website", completed: false, date: "Apr 10" },
                 ]
             },
             {
                 name: "April 2021",
                 items: [
-                    { name: "Release a storybook containing the first React components to quickly create a stake pool marketing page (SPO Marketing Page)" },
-                    { name: "Release a tutorial on how to [mint NFT's](https://developers.cardano.org/en/development-environments/native-tokens/native-tokens/) together with [PIADA](https://ada-pi.io)", completed: false },
-                    { name: "Explain terminology by adding tooltips to the website", completed: false, date: "Apr 10" },
+                    { name: "Release another [YouTube Video](https://www.youtube.com/watch?v=OeOliguGn7Y) on how to [mint a collection of NFT's](https://developers.cardano.org/en/development-environments/native-tokens/native-tokens/) together with [PIADA](https://ada-pi.io)", completed: true, date: "Apr 24" },
+                    { name: "Increase the pool pledge from 5k to 6k ADA", completed: true, date: "Apr 23" },
+                    { name: "Release a [YouTube Video](https://www.youtube.com/watch?v=OeOliguGn7Y) on how to [mint NFT's](https://developers.cardano.org/en/development-environments/native-tokens/native-tokens/) together with [PIADA](https://ada-pi.io)", completed: true, date: "Apr 12" },
                     { name: "Setup the initial pool website (pool.sublayer.io)", completed: true, date: "Apr 10" },
                     { name: "Ordered an Intel NUC to be prepared for (possible) increased hardware requirements caused by Alonzo", completed: true, date: "Apr 10" },
                     { name: "Created a [pull request](https://github.com/SinglePoolAlliance/Registration/pull/194) to get listed on [singlepoolalliance.net](https://singlepoolalliance.net)", completed: true, date: "Apr 10" },

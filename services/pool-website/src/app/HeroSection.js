@@ -2,10 +2,10 @@ const items = [
   { name: "Hardware", value: "3x Raspberry Pi 4 8GB" },
   { name: "Ticker", value: "SBLYR" },
   { name: "Pool ID", value: "8264de3cdb1798dd8758e24cda5101184b44543e7c4421c7815f9ed8" },
-  { name: "Epoch Fee", value: "345 ADA" },
+  { name: "Epoch Fee", value: "340 ADA" },
   { name: "Margin Fee", value: "1%" },
-  { name: "Pledge", value: "5k ADA (increasing with 1k every month)" },
-  { name: "Live stake", value: "10k ADA" },
+  { name: "Pledge", value: "6k ADA (increasing with 1k every month)" },
+  { name: "Live stake", value: "~14k ADA" },
   { name: "Return of ADA", value: "~5% (once we have enough delegators)" },
 ]
 
