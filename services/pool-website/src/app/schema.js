@@ -152,6 +152,7 @@ export default {
             {
                 name: "April 2021",
                 items: [
+                    { name: "Launch first version of [Armada Alliance website](https://ada-pi.github.io)", completed: true, date: "Apr 30" },
                     { name: "Initiate the [Armada Alliance](https://adapools.org/alli/armada-alliance/9) together with [PIADA](https://ada-pi.io)", completed: true, date: "Apr 24" },
                     { name: "Release another [YouTube Video](https://www.youtube.com/watch?v=6Ao98KdBACI) on how to [mint a collection of NFT's](https://developers.cardano.org/en/development-environments/native-tokens/native-tokens/) together with [PIADA](https://ada-pi.io)", completed: true, date: "Apr 24" },
                     { name: "Increase the pool pledge from 5k to 6k ADA", completed: true, date: "Apr 23" },
