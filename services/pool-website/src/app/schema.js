@@ -148,37 +148,28 @@ export default {
         description: "Here you can follow my journey being involved with the Cardano community as well as my plans for the future.",
         sprints: [
             {
-                name: "August 2021",
-                items: [
-                    { name: "Increase the pool pledge from 9k to 10k ADA", completed: false },
-                ]
-            },
-            {
                 name: "July 2021",
                 items: [
-                    { name: "Increase the pool pledge from 8k to 9k ADA", completed: false },
+                    { name: "[Armada Alliance 2.0](https://armada-alliance.com) Release", completed: true },
                 ]
             },
             {
                 name: "June 2021",
                 items: [
-                    { name: "Add support for more content blocks to SPO Marketing Page", completed: false },
-                    { name: "Increase the pool pledge from 7k to 8k ADA", completed: false },
+                    { name: "[Armada Alliance 2.0](https://armada-alliance.com) Development", completed: true }
                 ]
             },
             {
                 name: "May 2021",
                 items: [
-                    { name: "Release MVP version of marketing pages for SPO's (SPO Marketing Page)", completed: false },
-                    { name: "Increase the pool pledge from 6k to 7k ADA", completed: false },
-                    { name: "Release a storybook containing the first React components to quickly create a stake pool marketing page (SPO Marketing Page)" },
-                    { name: "Explain terminology by adding tooltips to the website", completed: false, date: "Apr 10" },
+                    { name: "Increased pledge to 25k", completed: true, date: "May 15" },
+                    { name: "[Armada Alliance 2.0](https://armada-alliance.com) Development", completed: true }
                 ]
             },
             {
                 name: "April 2021",
                 items: [
-                    { name: "Launch first version of [Armada Alliance website](https://ada-pi.github.io)", completed: true, date: "Apr 30" },
+                    { name: "Launch first version of [Armada Alliance website](https://armada-alliance.com)", completed: true, date: "Apr 30" },
                     { name: "Initiate the [Armada Alliance](https://adapools.org/alli/armada-alliance/9) together with [PIADA](https://ada-pi.io)", completed: true, date: "Apr 24" },
                     { name: "Release another [YouTube Video](https://www.youtube.com/watch?v=6Ao98KdBACI) on how to [mint a collection of NFT's](https://developers.cardano.org/en/development-environments/native-tokens/native-tokens/) together with [PIADA](https://ada-pi.io)", completed: true, date: "Apr 24" },
                     { name: "Increase the pool pledge from 5k to 6k ADA", completed: true, date: "Apr 23" },
@@ -209,6 +200,18 @@ export default {
         description: "I would like to give special thanks to the following Stake Pool Operators for their support.",
         pools: [
             {
+                name: "PIADA",
+                url: "https://ada-pi.io",
+                authors: "Wael Ivie / Tony",
+                image: "piada.png"
+            },
+            {
+                name: "OTG",
+                url: "https://adamantium.online",
+                authors: "Wayne",
+                image: "otg.png"
+            },
+            {
                 name: "NASEC",
                 url: "https://nasec.co.uk/cardano",
                 image: "nasec.png"
@@ -218,12 +221,7 @@ export default {
                 url: "https://cardano.dantup.com",
                 image: "coder.png"
             },
-            {
-                name: "PIADA",
-                url: "https://ada-pi.io",
-                authors: "Wael Ivie / Tony",
-                image: "piada.png"
-            }
+
         ]
     }
 }
