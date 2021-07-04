@@ -36,20 +36,46 @@ export default {
     ],
     specifications: [
         {
+            type: "Title",
+            name: "1x Apple Mac Mini M1 16GB RAM"
+        },
+        {
             icon: "Processor",
-            name: "3x Raspberry Pi 4 8GB RAM"
+            name: "8-core CPU with 4 performance cores and 4 efficiency cores",
         },
         {
-            icon: "Computer",
-            name: "Ubuntu 20.04 LTS OS"
+            icon: "Storage",
+            name: "Apple NVMe SSD, 160 GB"
         },
         {
-            icon: "Firewall",
-            name: "Firewall UFW"
+            type: "Divider",
+        },
+        {
+            type: "Title",
+            name: "2x Raspberry Pi 8GB RAM"
+        },
+        {
+            icon: "Processor",
+            name: "4-core CPU (overclocked to 2GHz)"
         },
         {
             icon: "Storage",
             name: "Crucial BX500 SSD, 120 GB"
+        },
+        {
+            type: "Divider",
+        },
+        {
+            type: "Title",
+            name: "Other"
+        },
+        {
+            icon: "Computer",
+            name: "Ubuntu 20.10 LTS OS"
+        },
+        {
+            icon: "Firewall",
+            name: "Firewall UFW"
         },
         {
             icon: "Internet",

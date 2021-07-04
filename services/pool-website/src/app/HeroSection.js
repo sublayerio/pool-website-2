@@ -1,15 +1,34 @@
-const items = [
-  { name: "Hardware", value: "3x Raspberry Pi 4 8GB" },
-  { name: "Ticker", value: "SBLYR" },
-  { name: "Pool ID", value: "8264de3cdb1798dd8758e24cda5101184b44543e7c4421c7815f9ed8" },
-  { name: "Epoch Fee", value: "340 ADA" },
-  { name: "Margin Fee", value: "1%" },
-  { name: "Pledge", value: "6k ADA (increasing with 1k every month)" },
-  { name: "Live stake", value: "~14k ADA" },
-  { name: "Return of ADA", value: "~5% (once we have enough delegators)" },
-]
+import { useEffect, useState } from 'react'
+import axios from 'axios'
+import numeral from 'numeral'
+const toAda = (input) => numeral(input / 1000000).format('0,0.00a').replace('.00', '') + ' ₳';
 
 export default function HeroSection() {
+
+  const [data, setData] = useState(null)
+
+  useEffect(async () => {
+
+    if (data) {
+      return
+    }
+
+    const { data: { data: _data } } = await axios.get('https://js.adapools.org/pools/8264de3cdb1798dd8758e24cda5101184b44543e7c4421c7815f9ed8/summary.json')
+    console.log(_data)
+    setData(_data)
+  })
+
+  const items = [
+    { name: "Hardware", value: data => "1x Apple Mac Mini M1 16GB, 2x Raspberry Pi 4 8GB" },
+    { name: "Ticker", value: data => data.db_ticker },
+    { name: "Pool ID", value: data => "8264de3cdb1798dd8758e24cda5101184b44543e7c4421c7815f9ed8" },
+    { name: "Epoch Fee", value: data => toAda(data.tax_fix) },
+    { name: "Margin Fee", value: data => `${parseFloat(data.tax_ratio, 10) * 100}%` },
+    { name: "Pledge", value: data => toAda(data.pledged) },
+    { name: "Live stake", value: data => toAda(data.total_stake) },
+    { name: "Return of ADA", value: data => `${data.roa}%` },
+  ]
+
 
   return (
     <div className="relative bg-gray-900 overflow-hidden pt-16 pb-16 sm:pb-24">
@@ -88,13 +107,16 @@ export default function HeroSection() {
                         {item.name}
                       </div>
                       <div className="opacity-75 overflow-hidden overflow-ellipsis">
-                        {item.value}
+                        {data ? item.value(data) : '-'}
                       </div>
                     </div>
                   )
                 })}
               </div>
-              <div className="mt-4">
+              <div className="flex items-center mt-4 space-x-2">
+                <a href="https://pool.pm/8264de3cdb1798dd8758e24cda5101184b44543e7c4421c7815f9ed8" target="_blank" className="text-white border-b border-white py-1">
+                  View on pool.pm
+                </a>
                 <a href="https://adapools.org/pool/8264de3cdb1798dd8758e24cda5101184b44543e7c4421c7815f9ed8" target="_blank" className="text-white border-b border-white py-1">
                   View on adapools.org
                 </a>

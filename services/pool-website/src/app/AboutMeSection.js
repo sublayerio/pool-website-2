@@ -56,7 +56,7 @@ function Solar(props) {
 const specifications = [
     {
         icon: Processor,
-        name: "3x Raspberry Pi 8GB RAM"
+        name: "1x Apple Mac Mini M1 16GB RAM, 2x Raspberry Pi 8GB RAM"
     },
     {
         icon: Computer,
