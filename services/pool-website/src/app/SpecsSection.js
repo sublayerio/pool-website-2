@@ -47,7 +47,7 @@ function SpecsSection() {
                         })}
                     </div>
                 </div>
-                <div className="mt-16 space-y-4 flex flex-col items-center">
+                <div className="mt-16 space-y-4 flex flex-col items-center overflow-hidden">
                     <div className="flex justify-center space-x-4">
                         <div className="bg-cover bg-center w-24 h-24 md:w-40 md:h-40 rounded-lg shadow" style={{ backgroundImage: `url(/setup1.webp)` }} />
                         <div className="bg-cover bg-center w-24 h-24 md:w-40 md:h-40 rounded-lg shadow" style={{ backgroundImage: `url(/setup2.webp)` }} />

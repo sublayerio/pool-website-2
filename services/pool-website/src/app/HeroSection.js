@@ -24,7 +24,7 @@ export default function HeroSection() {
     { name: "Pool ID", value: data => "8264de3cdb1798dd8758e24cda5101184b44543e7c4421c7815f9ed8" },
     { name: "Epoch Fee", value: data => toAda(data.tax_fix) },
     { name: "Margin Fee", value: data => `${parseFloat(data.tax_ratio, 10) * 100}%` },
-    { name: "Pledge", value: data => toAda(data.pledged) },
+    { name: "Pledge", value: data => toAda(data.pledge) },
     { name: "Live stake", value: data => toAda(data.total_stake) },
     { name: "Return of ADA", value: data => `${data.roa}%` },
   ]
