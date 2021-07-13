@@ -8,6 +8,17 @@ export default function Navigation() {
 
     const [open, setOpen] = useState(false)
 
+    const handleDelegate = () => {
+        var pool_id = '8264de3cdb1798dd8758e24cda5101184b44543e7c4421c7815f9ed8'
+        var blockfrost_project_id = '3Ojodngr06BReeSN9lhsow0hypKf8gu5'
+        var link = 'https://armada-alliance.com/delegation-widget?pool_id=' + pool_id + '&blockfrost_project_id=' + blockfrost_project_id
+        var width = 600
+        var height = Math.min(800, parseInt(window.outerHeight, 10))
+        var left = (parseInt(window.outerWidth, 10) / 2) - (width / 2)
+        var top = (parseInt(window.outerHeight, 10) - height) / 2
+        window.open(link, 'Delegate', 'width=' + width + ',height=' + height + ',toolbar=0,menubar=0,location=0,status=0,scrollbars=1,resizable=1,left=' + left + ',top=' + top);
+    }
+
     return (
         <div className="bg-gray-900">
             <div className="pt-6 pb-6">
@@ -62,6 +73,20 @@ export default function Navigation() {
                         </div>
                         <div className="hidden space-x-10 md:flex md:ml-10">
                             {schema.navItems.map(navItem => {
+
+                                console.log(navItem)
+
+                                if (navItem.url === '/delegate') {
+                                    return (
+                                        <button
+                                            type="button"
+                                            onClick={handleDelegate}
+                                            className="font-medium text-white hover:text-gray-300 flex items-center"
+                                        >
+                                            <span className={navItem.icon ? "mr-2" : null}>{navItem.name}</span>{navItem.icon ? <Icon type={navItem.icon} /> : null}
+                                        </button>
+                                    )
+                                }
 
                                 return (
                                     <Link href={navItem.url}>
