@@ -33,7 +33,7 @@ export default function Navigation() {
                                     <a>
                                         <span className="sr-only">Sublayer Pool</span>
                                         <img
-                                            className="h-8 w-auto sm:h-14"
+                                            className="h-8 w-auto sm:h-14 rounded-full"
                                             src="https://avatars2.githubusercontent.com/u/66509471?s=200&v=4"
                                             alt=""
                                         />
