@@ -94,9 +94,6 @@ function SpecsSection() {
                         I'm the operator of Sublayer Pool. I'm currently located in the Netherlands and I mainly write web applications for clients. I've been following the crypto space since 2017 and I've been involved in the Cardano community since early 2021.
                     </p>
                 </div>
-                <div className="mt-10 flex justify-center">
-                    <div className="bg-cover bg-center w-40 h-40 rounded-full shadow" style={{ backgroundImage: `url(/olivier.jpeg)` }} />
-                </div>
             </div>
         </div>
     )
