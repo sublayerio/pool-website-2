@@ -1,32 +1,41 @@
-name: Build Pool Website
+name: Build Website (Production)
 
 on:
-  release:
-    types:
-      - created
+  schedule:
+    - cron: "0 * * * *"
+  push:
+    branches: [ master ]
 
 jobs:
-  build-pool-website:
+  build:
+
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
-      - name: Set tag as environment variable
-        id: vars
-        run: echo ::set-output name=tag::$(echo ${GITHUB_REF:10})
-      - name: Build the Docker image
-        working-directory: ./services/pool-website
-        run: docker build . --file Dockerfile --tag sublayer/pool-website:${{ steps.vars.outputs.tag }}
-      - name: Login into Gitlab Docker Registry
-        run: docker login -u sublayer -p ${{ secrets.DOCKER_PASSWORD }}
-      - name: Push image to Gitlab Docker Registry
-        run: docker push sublayer/pool-website:${{ steps.vars.outputs.tag }}
-      - name: Install doctl
-        uses: digitalocean/action-doctl@v2
-        with:
-          token: ${{ secrets.DIGITALOCEAN_TOKEN }}
-      - name: Save DigitalOcean kubeconfig
-        run: doctl kubernetes cluster kubeconfig save ${{ secrets.DIGITALOCEAN_CLUSTER_NAME }}
-      - name: Deploy to Kubernetes cluster
-        working-directory: ./scripts
-        run: VERSION=${{ steps.vars.outputs.tag }} ./k8-apply.sh pool-website.yaml
+    - uses: actions/checkout@v2
+    - name: Use Node.js 14.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14.x
+    - name: Build static website
+      working-directory: ./services/pool-website
+      run: |
+        npm install
+        npm run build
+        npm run export
+        git config --global user.name "${{ secrets.CI_USERNAME }}"
+        git config --global user.email "${{ secrets.CI_EMAIL }}"
+        PAT64=$(echo ":${{ secrets.CI_PASSWORD }}" | base64)
+        git -c http.extraHeader="Authorization: Basic $PAT64" clone https://${{ secrets.CI_USERNAME }}:${{ secrets.CI_PASSWORD }}@github.com/sblyr/sblyr.github.io /tmp/repo
+        rm -rf /tmp/repo/_next
+        cp -R out/* /tmp/repo
+    - name: Push changes to GitHub Pages repo
+      working-directory: /tmp/repo
+      run: |
+        pwd
+        git add --all 
+        git commit -m 'update build' 
+        git config --global user.name "${{ secrets.CI_USERNAME }}"
+        git config --global user.email "${{ secrets.CI_EMAIL }}"
+        git remote set-url origin https://${{ secrets.CI_USERNAME }}:${{ secrets.CI_PASSWORD }}@github.com/sblyr/sblyr.github.io
+        git push origin master
