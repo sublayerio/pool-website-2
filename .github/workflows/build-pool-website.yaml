@@ -1,10 +1,9 @@
 name: Build Website (Production)
 
 on:
-  schedule:
-    - cron: "0 * * * *"
-  push:
-    branches: [ master ]
+  release:
+    types:
+      - created
 
 jobs:
   build:
